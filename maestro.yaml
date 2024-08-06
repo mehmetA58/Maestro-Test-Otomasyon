@@ -1,0 +1,22 @@
+appId : "trendyol.com"
+---
+- launchApp
+- assertVisible: "Erkek"
+- tapOn:
+    id: "trendyol.com:id/edittext_search_view"
+    waitToSettleTimeoutMs: 500 # ms
+- inputRandomText  
+- pressKey: Enter
+- tapOn:
+    id: "trendyol.com:id/imageview_action_end"
+- tapOn:
+    point: "12%,39%"
+- assertVisible: "TRENDİZ"
+
+- runFlow:
+    when:
+      visible: "Mağazaya Git"
+    commands:
+      - tapOn: "Mağazaya Git"
+- tapOn: "Takip Et"   
+- stopApp
